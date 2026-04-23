@@ -1,0 +1,1 @@
+Swal.fire({title:"¡Cita Reagendada!",text:"Tu cita fue reagendada con éxito",icon:"success",confirmButtonText:"Aceptar"}).then(()=>{window.history.replaceState({},document.title,"/cita")});

@@ -1,0 +1,93 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.contenedor-app {
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        min-height: 100vh;
+    }
+
+    .imagen {
+        height: 20rem;
+        background-image: url(../img/1.jpg);
+        background-size: cover;
+        background-position: center center;
+        @include m.tablet {
+            height: auto;
+        }
+    }
+
+    .app {
+        width: 95%;
+        margin: 0 auto;
+        padding: 3rem 0;
+        @include m.tablet {
+            overflow: scroll;
+            scrollbar-width: none;
+        }
+    }
+}
+
+.barra {
+    margin: 5rem 0;
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .boton {
+        border-radius: 1rem;
+        @include m.boton(v.$rojo, v.$blanco);
+        font-size: 1.3rem;
+        margin: 0;
+        padding: 1rem;
+        font-weight: v.$regular;
+    }
+
+    .boton-cita {
+        border-radius: 1rem;
+        @include m.boton(v.$azul, v.$blanco);
+        font-size: 1.3rem;
+        margin: .5rem 0;
+        padding: 1rem;
+        font-weight: v.$bold;
+    }
+}
+
+.barra-servicios {
+    margin-bottom: 5rem;
+    @include m.tablet {
+        display: flex;
+        justify-content: space-between;
+    }
+    .boton {
+        margin: 0 0 .5rem 0;
+    }
+}
+
+.citas {
+    .acciones {
+        margin: 0;
+
+        .boton {
+            border-radius: 1rem;
+            @include m.boton(v.$naranja, v.$blanco);
+            font-size: 1.3rem;
+            margin: 0;
+            padding: 1rem;
+            font-weight: v.$regular;
+            margin-bottom: .5rem;
+        }
+        
+
+        .boton-eliminar {
+            @include m.boton(v.$rojo, v.$blanco);
+            font-size: 1.3rem;
+            margin: 0;
+            padding: 1rem;
+            font-weight: v.$regular;        
+        }
+    }
+}

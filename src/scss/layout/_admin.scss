@@ -1,0 +1,58 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+@use "sass:color";
+
+.servicio-cita {
+    color: v.$gris;
+    font-size: 2rem;
+    
+}
+.citas {
+    list-style: none;
+    padding: 0;
+    
+    li {
+        padding: 1rem;
+        border-top: 1px solid v.$blanco;
+        p {
+            font-weight: v.$bold;
+            color: v.$azul;
+            font-size: 1.4rem;
+        }
+
+        span, 
+        .servicio {
+            font-weight: v.$regular;
+            color: v.$blanco;
+            font-size: 1.4rem;
+        }
+    }
+}
+
+.servicios {
+    @extend .citas;
+
+    .acciones {
+        margin: 0;
+
+        .boton {
+            border-radius: 1rem;
+            @include m.boton(v.$naranja, v.$blanco);
+            font-size: 1.3rem;
+            margin: 0;
+            padding: 1rem;
+            font-weight: v.$regular;
+            margin-bottom: .5rem;
+        }
+        
+
+        .boton-eliminar {
+            @include m.boton(v.$rojo, v.$blanco);
+            font-size: 1.3rem;
+            margin: 0;
+            padding: 1rem;
+            font-weight: v.$regular;        
+        }
+    }
+}
+

@@ -1,0 +1,23 @@
+{
+    "name": "edinsonaguirre/appsalon_cindy_rodriguez",
+    "description": "Proyecto de Tesis utilizando PHP 8, MVC, SQL, SASS, GULP",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MVC\\" : "./",
+            "Controllers\\" : "./controllers",
+            "Model\\" : "./models",
+            "Classes\\" : "./classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "edn20",
+            "email": "edn-20@hotmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^7.0",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
