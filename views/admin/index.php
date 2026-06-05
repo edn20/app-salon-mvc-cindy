@@ -31,9 +31,8 @@
                     $total = 0; 
         ?>
                     <li>
-                        <p>ID: <span><?php echo $cita->id; ?></span></p>
-                        <p>Hora: <span><?php echo $cita->hora; ?></span></p>
                         <p>Cliente: <span><?php echo $cita->cliente; ?></span></p>
+                        <p>Hora: <span><?php echo $cita->hora; ?></span></p>
                         <p>Email: <span><?php echo $cita->email; ?></span></p>
                         <p>Teléfono: <span><?php echo $cita->telefono; ?></span></p>
                         <h3 class="servicio-cita">Servicios Seleccionados:</h3>
@@ -50,10 +49,10 @@
                     if(esUltimo($actual, $proximo)) { 
                 ?>
                         <p class="total">Total: <span>$ <?php echo $total; ?></span></p>
-                        <form action="/api/eliminar" method="POST">
+                        <!-- <form action="/api/eliminar" method="POST">
                             <input type="hidden" name="id" value="<?php echo $cita->id; ?>">
                             <input type="submit" class="boton-eliminar" value="🗑️ Eliminar Cita">
-                        </form>
+                        </form> -->
                 <?php
                     }
             } //Fin de FOREACH 

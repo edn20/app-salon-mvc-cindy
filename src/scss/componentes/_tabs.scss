@@ -9,7 +9,7 @@
     }
 
     button {
-        background-color: v.$azul;
+        background-color: v.$rosado;
         border: none;
         color: v.$blanco;
         padding: 1rem;
@@ -22,11 +22,11 @@
 
         &:hover {
             cursor: pointer;
-            background-color: color.adjust(v.$azul, $lightness: -10%);
+            background-color: color.adjust(v.$rosado, $lightness: -10%);
         }
         &.actual {
             background-color: v.$blanco;
-            color: v.$azul;
+            color: v.$rosado;
         }
     }
 }

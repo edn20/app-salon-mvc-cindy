@@ -1,5 +1,6 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
+@use 'sass:color';
 
 .contenedor-app {
     @include m.tablet {
@@ -10,7 +11,7 @@
 
     .imagen {
         height: 20rem;
-        background-image: url(../img/1.jpg);
+        background-image: url(../img/5.png);
         background-size: cover;
         background-position: center center;
         @include m.tablet {
@@ -48,7 +49,7 @@
 
     .boton-cita {
         border-radius: 1rem;
-        @include m.boton(v.$azul, v.$blanco);
+        @include m.boton(v.$rosado, v.$blanco);
         font-size: 1.3rem;
         margin: .5rem 0;
         padding: 1rem;
@@ -64,6 +65,11 @@
     }
     .boton {
         margin: 0 0 .5rem 0;
+        background-color: v.$rosado;
+
+        &:hover {
+            background-color: color.adjust(v.$rosado, $lightness: -10%);
+        }
     }
 }
 
@@ -90,4 +96,18 @@
             font-weight: v.$regular;        
         }
     }
+}
+
+.buscador-servicios {
+    display: flex;
+    flex-direction: column;
+    input {
+        flex: 1;
+        border: none;
+        padding: 1rem;
+        border-radius: 1.5rem;
+        margin: 0 1rem;
+    }
+
+    
 }

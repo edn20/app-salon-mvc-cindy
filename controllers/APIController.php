@@ -8,8 +8,39 @@ use Model\Servicio;
 
 class APIController {
     public static function index() {
-       $servicios = Servicio::all();
-       echo json_encode($servicios);
+       $servicios = Servicio::allServiciosAPI();
+
+       $categorias = [];
+
+        foreach($servicios as $servicio) {
+            $categoriaId = $servicio->categoriaId;
+
+            if(!isset($categorias[$categoriaId])) {
+                $categorias[$categoriaId] = [
+                    'id' => $servicio->categoriaId,
+                    'nombre' => $servicio->categoria,
+                    'servicios' => []
+                ];
+            }
+
+            $categorias[$categoriaId]['servicios'][] = [
+                'id' => $servicio->id,
+                'nombre' => $servicio->nombre,
+                'precio' => $servicio->precio,
+                'categoriaId' => $servicio->categoriaId,
+                'categoria' => $servicio->categoria,
+                'estadoId' => $servicio->estadoId,
+                'estado' => $servicio->estado,
+                'tipopagoId' => $servicio->tipopagoId,
+                'tipopago' => $servicio->tipopago,
+                'detalleservicioId' => $servicio->detalleservicioId,
+                'detalle' => $servicio->detalle,
+                'tiempo' => $servicio->tiempo,
+                'recomendaciones' => $servicio->recomendaciones
+            ];
+        }
+        
+       echo json_encode(array_values($categorias));
     }
 
     public static function guardar() {

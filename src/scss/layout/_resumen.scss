@@ -8,7 +8,7 @@
     }
 
     span {
-        color: v.$azul;
+        color: v.$rosado;
         font-weight: v.$bold;
         font-size: 2.4rem;
     }
@@ -16,8 +16,26 @@
 .contenedor-servicio {
     padding: 1.25rem;
     border-bottom: 1px solid v.$gris;
+}
 
-    &:last-of-type {
-        border-bottom: none;
+.total-servicio {
+    font-size: 3rem;
+    font-weight: v.$bold;
+}
+
+.nota-total {
+    font-size: 1.4rem;
+
+    span {
+        font-size: 1.4rem;
+        font-weight: v.$bold;
+    }
+}
+
+.recomendacion-servicio {
+    font-size: 1.4rem;
+
+    span {
+        font-size: 1.4rem;
     }
 }

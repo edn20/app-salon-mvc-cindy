@@ -15,7 +15,8 @@
         flex: 0 0 10rem;
     }
 
-    input {
+    input,
+    textarea {
         flex: 1;
         border: none;
         padding: 1.25rem;
@@ -27,5 +28,22 @@
             font-weight: v.$bold;
             cursor: not-allowed;
         }
+    }
+
+    .formulario_select {
+        flex: 1;
+        border: none;
+        padding: 1.25rem;
+        border-radius: 1.5rem;
+    }
+
+    .tiempo {
+        flex: 0;
+    }
+
+    .formulario__radio {
+        display: flex;
+        gap: 5rem;
+        margin-left: 2rem;
     }
 }

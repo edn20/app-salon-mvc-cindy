@@ -22,8 +22,8 @@
                     $total = 0; 
         ?>
                     <li>
-                        <p>Hora: <span><?php echo $cita->hora; ?></span></p>
                         <p>Fecha: <span><?php echo formatearFecha($cita->fecha); ?></span></p>
+                        <p>Hora: <span><?php echo $cita->hora; ?></span></p>
                         <h3 class="servicio-cita">Servicios Seleccionados:</h3>
                 <?php 
                         $idCita = $cita->id;

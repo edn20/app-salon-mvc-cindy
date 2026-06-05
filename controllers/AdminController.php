@@ -7,7 +7,9 @@ use MVC\Router;
 
 class AdminController {
     public static function index(Router $router) {
-        session_start();
+        if(!isset($_SESSION)) { 
+            session_start();
+        }
         isAdmin();
         
         date_default_timezone_set('America/Guayaquil');
@@ -24,11 +26,12 @@ class AdminController {
         $consulta .= " FROM citas  ";
         $consulta .= " LEFT OUTER JOIN usuarios ";
         $consulta .= " ON citas.usuarioId=usuarios.id  ";
-        $consulta .= " LEFT OUTER JOIN citasServicios ";
-        $consulta .= " ON citasServicios.citaId=citas.id ";
+        $consulta .= " LEFT OUTER JOIN citasservicios ";
+        $consulta .= " ON citasservicios.citaId=citas.id ";
         $consulta .= " LEFT OUTER JOIN servicios ";
-        $consulta .= " ON servicios.id=citasServicios.servicioId ";
-        $consulta .= " WHERE fecha =  '${fecha}' ";
+        $consulta .= " ON servicios.id=citasservicios.servicioId ";
+        $consulta .= " WHERE fecha =  '{$fecha}' ";
+        $consulta .= " ORDER BY citas.hora ASC ";
 
 
         $citas = AdminCita::SQL($consulta);

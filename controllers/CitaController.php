@@ -8,7 +8,9 @@ use MVC\Router;
 
 class CitaController {
     public static function index(Router $router) {
-        session_start();
+        if(!isset($_SESSION)) { 
+            session_start();
+        }
         isAuth();
 
         $router->render('cita/index', [
@@ -43,11 +45,12 @@ class CitaController {
         $consulta .= " FROM citas  ";
         $consulta .= " LEFT OUTER JOIN usuarios ";
         $consulta .= " ON citas.usuarioId=usuarios.id  ";
-        $consulta .= " LEFT OUTER JOIN citasServicios ";
-        $consulta .= " ON citasServicios.citaId=citas.id ";
+        $consulta .= " LEFT OUTER JOIN citasservicios ";
+        $consulta .= " ON citasservicios.citaId=citas.id ";
         $consulta .= " LEFT OUTER JOIN servicios ";
-        $consulta .= " ON servicios.id=citasServicios.servicioId ";
-        $consulta .= " WHERE usuarioId =  '${usuarioId}' ";
+        $consulta .= " ON servicios.id=citasservicios.servicioId ";
+        $consulta .= " WHERE usuarioId =  '{$usuarioId}' ";
+        $consulta .= " ORDER BY citas.fecha ASC, citas.hora ASC ";
 
         $citas = AdminCita::SQL($consulta);
 

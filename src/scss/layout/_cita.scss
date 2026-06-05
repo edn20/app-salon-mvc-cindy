@@ -3,7 +3,6 @@
 @use "sass:color";
 
 .seccion {
-    padding: v.$separacion 0;
     display: none;
 
     .text-center{
@@ -21,10 +20,15 @@
 
 .mostrar-cita{
     .boton{
-        @include m.boton(v.$verde, v.$blanco);
+        @include m.boton(v.$rosado, v.$blanco);
         text-transform: uppercase;
         padding: 1rem;
         border-radius: 1rem;
         margin: 2rem 0;
     }
+}
+
+.listado-servicios {
+    display: flex;
+    flex-direction: column;
 }
